@@ -1,4 +1,19 @@
-﻿body {
+﻿*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    //letter-spacing: 2px;
+}
+
+body {
+    width: 100%;
+    display: flex;
     background-image: url(izzy1.jpg);
     background-repeat: no-repeat;
     background-attachment: initial;
@@ -7,9 +22,103 @@
     background-color: #000000;
 }
 
+.container2 {
+    width: 100%;
+    max-width: 120rem;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1.5rem;
+    grid-template-areas: 'img-1 img-2 img-3 img-3'
+                         'img-1 img-4 img-5 img-6'
+                         'img-7 img-7 img-8 img-9';
+}
+
+.image-gallery a {
+    width: 100%;
+    height: 25rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.image-gallery a i{
+    color: rgba(255,255,255,0.6);
+    font-size: 3rem;
+    position: relative;
+    z-index: 100;
+    padding: 1rem 3rem;
+    border: 2px solid rgba(255,255,255, 0.6);
+    border-radius: .4rem;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.image-gallery a::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.image-gallery a:hover i,
+.image-gallery a:hover::before{
+    opacity: 1;
+}
+
+.img-1{
+    grid-area: img-1;
+    min-height: 51.5rem;
+    background-image: url("images/img-1.jpg")
+}
+.img-2 {
+    grid-area: img-2;
+    background-image: url("images/img-2.jpg")
+}
+.img-3 {
+    grid-area: img-3;
+    background-image: url("images/img-3.jpg")
+}
+.img-4 {
+    grid-area: img-4;
+    background-image: url("images/img-4.jpg")
+}
+.img-5 {
+    grid-area: img-5;
+    background-image: url("images/img-5.jpg")
+}
+.img-6 {
+    grid-area: img-6;
+    background-image: url("images/img-6.jpg")
+}
+.img-7 {
+    grid-area: img-7;
+    background-image: url("images/img-7.jpg")
+}
+.img-8 {
+    grid-area: img-8;
+    background-image: url("images/img-8.jpg")
+}
+
 main {
-    padding-top: 450px;
+    padding-top: 475px;
     color: #FFFFFF;
+    font-size: 30px;
 }
 
 header {
@@ -54,7 +163,7 @@ nav {
     align-items: center;
     min-height: 8vh;
     font-size: 120%;
-    font-weight: bold;
+    //font-weight: bold;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -110,7 +219,7 @@ nav li {
 #abouthero {
     justify-content: center;
     height: 450px;
-    width: 400px;
+    width: 375px;
     background-image: url(izzyparis.JPG);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -142,9 +251,34 @@ video {
     padding: 20px;
 }
 
-@media (min-width: 600px) {
-    nav ul { display: flex; flex-flow: row nowrap; justify-content: space-around; }
-    nav li { border-bottom: none; }
+.nav-links {
+    display: flex;
+}
+
+.burger { display: none; cursor: pointer; }
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 5px;
+}
+section {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.content main {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+@media (max-width: 1024px) {
+    /*nav ul { display: flex; flex-flow: row nowrap; justify-content: space-around; }
+    nav li { border-bottom: none; }*/
+    
     section { padding-left: 2em; padding-right: 2em; }
     .content main {
         display: grid;
@@ -168,7 +302,59 @@ video {
     }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 768px) {
+    header {
+        display: none;
+        opacity: 0;
+    }
+    .logo {
+        color: #FFFFFF;
+        letter-spacing: 3px;
+        font-size: 22px;
+    }
+    body {
+        overflow-x: hidden;
+    }
 
+    nav a:link { color: #FFFFFF; }
+    nav a:visited { color: #8a8a8a; }
+    nav a:hover { color: #5500de; }
+
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        //background-color: #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    nav-links li {
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+        float: right;
+    }
 }
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle
 
