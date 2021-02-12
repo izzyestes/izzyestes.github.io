@@ -14,7 +14,7 @@ html {
 body {
     width: 100%;
     //display: flex;
-    background-image: url(izzy1.jpg);
+    background-image: url(izzy1.JPG);
     background-repeat: no-repeat;
     background-attachment: initial;
     background-size: cover;
@@ -108,35 +108,35 @@ tr:nth-of-type(odd) {
 .img-1{
     grid-area: img-1;
     min-height: 51.5rem;
-    background-image: url("images/img-1.JPG")
+    background-image: url("img-1.JPG")
 }
 .img-2 {
     grid-area: img-2;
-    background-image: url("images/img-2.JPG")
+    background-image: url("img-2.JPG")
 }
 .img-3 {
     grid-area: img-3;
-    background-image: url("images/img-3.JPG")
+    background-image: url("img-3.JPG")
 }
 .img-4 {
     grid-area: img-4;
-    background-image: url("images/img-4.JPG")
+    background-image: url("img-4.JPG")
 }
 .img-5 {
     grid-area: img-5;
-    background-image: url("images/img-5.JPG")
+    background-image: url("img-5.JPG")
 }
 .img-6 {
     grid-area: img-6;
-    background-image: url("images/img-6.jpg")
+    background-image: url("img-6.jpg")
 }
 .img-7 {
     grid-area: img-7;
-    background-image: url("images/img-7.jpg")
+    background-image: url("img-7.jpg")
 }
 .img-8 {
     grid-area: img-8;
-    background-image: url("images/img-8.JPG")
+    background-image: url("img-8.JPG")
 }
 
 main {
