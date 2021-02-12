@@ -108,23 +108,23 @@ tr:nth-of-type(odd) {
 .img-1{
     grid-area: img-1;
     min-height: 51.5rem;
-    background-image: url("images/img-1.jpg")
+    background-image: url("images/img-1.JPG")
 }
 .img-2 {
     grid-area: img-2;
-    background-image: url("images/img-2.jpg")
+    background-image: url("images/img-2.JPG")
 }
 .img-3 {
     grid-area: img-3;
-    background-image: url("images/img-3.jpg")
+    background-image: url("images/img-3.JPG")
 }
 .img-4 {
     grid-area: img-4;
-    background-image: url("images/img-4.jpg")
+    background-image: url("images/img-4.JPG")
 }
 .img-5 {
     grid-area: img-5;
-    background-image: url("images/img-5.jpg")
+    background-image: url("images/img-5.JPG")
 }
 .img-6 {
     grid-area: img-6;
@@ -136,7 +136,7 @@ tr:nth-of-type(odd) {
 }
 .img-8 {
     grid-area: img-8;
-    background-image: url("images/img-8.jpg")
+    background-image: url("images/img-8.JPG")
 }
 
 main {
